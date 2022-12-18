@@ -20,13 +20,22 @@ class RegisterForm extends React.Component {
       })
       .catch((error) => {
         console.error(error);
+
       });
   }
-
+   
+  handleClick = (event) => {
+      axios.get('/auth/google')
+      .then((response) => {
+        console.log(response.data);
+      }
+      )
+    };
+  
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
+      <form /*onSubmit={this.handleSubmit}*/ action="http://localhost:3000/auth/google" method="get">
+        {/* <label>
           Email:
           <input type="email" name="email" value={this.state.email} onChange={this.handleChange} />
         </label>
@@ -35,8 +44,9 @@ class RegisterForm extends React.Component {
           Password:
           <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
         </label>
-        <br />
+        <br /> */}
         <button type="submit">Register</button>
+        {/* <button type="button" onClick={this.handleClick}>Google</button> */}
       </form>
     );
   }

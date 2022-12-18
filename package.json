@@ -14,5 +14,8 @@
   "workspaces": [
     "backend",
     "frontend"
-  ]
+  ],
+  "proxy": "http://localhost:3000"
 }
+
+
