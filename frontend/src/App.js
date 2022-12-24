@@ -1,6 +1,8 @@
 import './App.css';
 import React from 'react';
-import RegisterForm from './Auth/RegisterForm';
+import RegisterForm from './Controllers/RegisterForm';
+//import route
+import { Route, Switch } from 'react-router-dom';
 
 class App extends React.Component {
   render() {
