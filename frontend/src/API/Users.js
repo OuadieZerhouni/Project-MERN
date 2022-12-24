@@ -29,7 +29,7 @@ class UsersList extends React.Component {
   <li key={_id}>{name.givenName} 
   </li>
 ))}
-<button onClick={this.handleClick}>Meeting</button>
+<button onClick={this.MClick}>Meeting</button>
         </ul>
       </div>
     );
