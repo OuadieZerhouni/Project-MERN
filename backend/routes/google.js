@@ -5,6 +5,8 @@ const cors = require('cors');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const MongoClient = require('mongodb').MongoClient;
+const jwt = require('jsonwebtoken');
+
 
 const app = express();
 app.use(session({
@@ -40,7 +42,7 @@ async function(accessToken, refreshToken, profile, cb) {
   const db = client.db(MONGODB_DB_NAME);
   const usersCollection = db.collection('users');
   await usersCollection.insertOne(profile);
-
+  const token = jwt.sign(profile, 'secret', { expiresIn: '24h' });
   client.close();
 
   return cb(null, profile);
