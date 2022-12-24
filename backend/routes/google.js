@@ -41,7 +41,11 @@ async function(accessToken, refreshToken, profile, cb) {
   // Save the user to the database
   const db = client.db(MONGODB_DB_NAME);
   const usersCollection = db.collection('users');
-  await usersCollection.insertOne(profile);
+  //if user doesn4t extist, create it
+  if (await usersCollection.findOne
+    ({googleId: profile.id}) === null) {
+    await usersCollection.insertOne(profile);
+  }
   const token = jwt.sign(profile, 'secret', { expiresIn: '24h' });
   client.close();
 
