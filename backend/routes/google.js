@@ -18,7 +18,7 @@ app.use(cors({
     origin: '*'
   }));
 // Replace with your MongoDB connection string and database name
-const MONGODB_URI = 'mongodb://root1:0@localhost:27017/Project?retryWrites=true&w=majority';
+const MONGODB_URI = 'mongodb://root1:0@127.0.0.1:27017/Project?retryWrites=true&w=majority';
 const MONGODB_DB_NAME = 'Project';
 
 // Replace with your Google client ID and client secret
