@@ -1,9 +1,12 @@
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
+const cors = require('cors');
 
 
 const app = express();
-
+app.use(cors({
+    origin: '*'
+  }));
 
 const MONGODB_URI = 'mongodb://root1:0@127.0.0.1:27017/Project?retryWrites=true&w=majority';
 const MONGODB_DB_NAME = 'Project';

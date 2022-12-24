@@ -2,6 +2,8 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import UsersList from '../API/Users';
+
 
 class DashBoard extends React.Component {
    
@@ -16,7 +18,7 @@ class DashBoard extends React.Component {
         return (
         <div>
             <h1>DashBoard</h1>
-            <Link to="/Meeting"><button type="button">Meeting</button></Link>
+            <UsersList />
         </div>
         );
     }
