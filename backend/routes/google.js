@@ -1,11 +1,22 @@
+
 const express = require('express');
-const router = express.Router();
+const session = require('express-session');
+const cors = require('cors');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const MongoClient = require('mongodb').MongoClient;
 
 const app = express();
-
+app.use(session({
+    secret: 'your-secret-key',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true }
+  }));
+app.use(cors());
+app.use(cors({
+    origin: '*'
+  }));
 // Replace with your MongoDB connection string and database name
 const MONGODB_URI = 'mongodb://root1:0@localhost:27017/Project?retryWrites=true&w=majority';
 const MONGODB_DB_NAME = 'Project';
@@ -50,16 +61,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Add the Google login route
-app.get('/auth/google',
+app.get('/google',
   passport.authenticate('google', { scope: ['profile'] }));
 
 // Add the Google login callback route
-app.get('/auth/google/callback', 
+app.get('/google/callback', 
   passport.authenticate('google', { failureRedirect: '/login' }),
   function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect('/');
+    res.redirect('http://localhost:3001/dashboard');
   });
 
-
-  app.listen(3000, () => console.log('Server listening on port 3000'));
+  module.exports = app;
