@@ -1,13 +1,4 @@
-// const express = require('express');
-// const app = express();
-// // const authRoutes = require('./routes/auth');
-// const googleRoutes = require('./routes/google');
 
-// app.use(express.json());
-// // app.use('/auth', authRoutes);
-// app.get('/auth/google', googleRoutes);
-
-// app.listen(3000, () => console.log('Server listening on port 3000'));
 const express = require('express');
 const session = require('express-session');
 const router = express.Router();
@@ -79,7 +70,7 @@ app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('http://localhost:3001');
+    res.redirect('http://localhost:3001/dashboard');
   });
 
 app.listen(3000, () => console.log('Server listening on port 3000'));
