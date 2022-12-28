@@ -17,7 +17,7 @@ io.on("connection",socket=>{
     //     });
         console.log('inside')
         socket.on("vi",(data)=>{
-            console.log(data.msg)
+            console.log("we did it !!")
         })
         //console.log("hi socket")
     });
