@@ -4,8 +4,8 @@
   "description": "Backed part of Mern web app for school project .",
   "main": "server.js",
   "scripts": {
-    "test": "npm run"
-    ,"watch": "nodemon server.js"
+    "test": "npm run",
+    "watch": "nodemon server.js"
   },
   "author": "Ouadie Zerhouni /Abdessamad Belmadani",
   "license": "ISC",
@@ -15,8 +15,9 @@
     "express-session": "^1.17.3",
     "jsonwebtoken": "^9.0.0",
     "mongodb": "^4.12.1",
+    "nodemon": "^2.0.15",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
-    "nodemon": "^2.0.15"
+    "socket.io": "^4.5.4"
   }
 }

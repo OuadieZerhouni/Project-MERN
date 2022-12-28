@@ -2,23 +2,20 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import UsersList from '../API/Users';
+import UsersList from '../Component/Users';
 
 
 class DashBoard extends React.Component {
    
      
-    handleClick = (event) => {
-        axios.get('/meeting')
-        .then((response) => {
-            console.log(response.data);
-        })};
+   
     
     render(){
         return (
         <div>
             <h1>DashBoard</h1>
             <UsersList />
+            <Link to="/Meet"><button type="button">Video Call</button></Link>
         </div>
         );
     }
