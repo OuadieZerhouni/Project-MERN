@@ -24,8 +24,8 @@ const MONGODB_URI = 'mongodb://root1:0@127.0.0.1:27017/Project?retryWrites=true&
 const MONGODB_DB_NAME = 'Project';
 
 // Replace with your Google client ID and client secret
-const GOOGLE_CLIENT_ID = '171986355262-ksmqvs59a8t92fiaq4ba8u1tusmf797h.apps.googleusercontent.com';
-const GOOGLE_CLIENT_SECRET = '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';
+const GOOGLE_CLIENT_ID = '...';
+const GOOGLE_CLIENT_SECRET = '...';
 
 // Configure the Google strategy for Passport
 passport.use(new GoogleStrategy({
